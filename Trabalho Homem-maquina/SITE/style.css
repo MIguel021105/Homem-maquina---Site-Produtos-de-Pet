@@ -1,0 +1,233 @@
+/* PALETA DE CORES DEFINIDA - MÁXIMO 4 CORES */
+:root {
+    --creme: #FFFDD0;          /* Fundo principal (1) */
+    --bege-suave: #F5F5DC;     /* Fundo alternativo (2) */
+    --marrom-claro: #D2B48C;   /* Destaque / Botões (3) */
+    --texto-escuro: #4B3832;   /* Texto principal (4) */
+    --texto-claro: #FFFFFF;    /* Texto sobre fundos escuros/imagem */
+}
+
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--texto-escuro);
+    background-color: var(--creme);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- CABEÇALHO/LOGO PEQUENA --- */
+header {
+    background-color: var(--marrom-claro);
+    color: var(--texto-claro);
+    text-align: center;
+    padding: 15px 0; /* Padding reduzido */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-pequena {
+    font-size: 1.8em; /* Tamanho da logo reduzido */
+    font-weight: 700;
+    margin: 0;
+}
+
+.slogan-pequeno {
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+/* --- INTRODUÇÃO (BEM-VINDO) COM IMAGEM DE FUNDO --- */
+.secao-bem-vindo {
+    /* ** SUBSTITUA PELA URL DA SUA IMAGEM DE CACHORRO ** */
+    background: url('https://www.google.com/imgres?q=foto%20de%20cachorro%20hd&imgurl=https%3A%2F%2Fwww.portaldodog.com.br%2Fwp-content%2Fuploads%2F2025%2F03%2F5-Racas-de-cachorro-que-tem-cara-de-filhote-1.jpg&imgrefurl=https%3A%2F%2Fwww.portaldodog.com.br%2Fcachorro%2F5-racas-de-cachorro-que-tem-cara-de-filhote%2F&docid=7hA5b22Vid4yNM&tbnid=bTVwP5YsnpcUsM&vet=12ahUKEwiJqPfhppCRAxX2qpUCHQfjC0AQM3oECHMQAA..i&w=1000&h=750&hcb=2&ved=2ahUKEwiJqPfhppCRAxX2qpUCHQfjC0AQM3oECHMQAA') no-repeat center center/cover; 
+    background-attachment: fixed;
+    padding: 100px 0; 
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay para escurecer a imagem e melhorar a leitura */
+.secao-bem-vindo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay */
+    z-index: -1; 
+}
+
+.overlay-conteudo {
+    color: var(--texto-claro);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.overlay-conteudo h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.overlay-conteudo p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botao-destaque {
+    display: inline-block;
+    background-color: var(--marrom-claro); /* Usa a cor de destaque */
+    color: var(--texto-claro);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    text-shadow: none; 
+}
+
+.botao-destaque:hover {
+    background-color: #a08465; /* Marrom levemente mais escuro no hover */
+}
+
+/* --- PRODUTOS --- */
+.secao-produtos {
+    background-color: var(--bege-suave); /* Fundo alternativo */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.secao-produtos h2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: var(--texto-escuro);
+}
+
+.lista-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.produto {
+    background-color: var(--creme); /* Creme para o cartão do produto */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 15px);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--marrom-claro);
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.imagem-produto {
+    width: 100%; /* Ocupa a largura total do card */
+    height: 120px; /* Altura fixa para manter o layout uniforme */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: block; /* Para garantir que o width/height funcione bem */
+}
+
+.produto h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.produto .descricao {
+    font-size: 0.9em;
+    margin-bottom: 12px;
+    height: 35px;
+}
+
+.produto .preco {
+    display: block;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--marrom-claro);
+    margin-bottom: 15px;
+}
+
+.botao-comprar {
+    background-color: var(--texto-escuro); /* Marrom escuro para o botão de compra */
+    color: var(--texto-claro);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.botao-comprar:hover {
+    background-color: var(--marrom-claro);
+}
+
+/* --- QUEM SOMOS --- */
+.secao-quem-somos {
+    background-color: var(--creme); 
+    padding: 60px 0;
+    text-align: center;
+}
+
+.secao-quem-somos h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--marrom-claro);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.quem-somos-conteudo {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+/* --- RODAPÉ E DIREITOS --- */
+footer {
+    background-color: var(--texto-escuro); 
+    color: var(--bege-suave);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .produto {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .produto {
+        width: 100%;
+    }
+    .secao-bem-vindo {
+        padding: 60px 0;
+    }
+}
